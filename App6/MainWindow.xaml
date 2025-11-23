@@ -223,21 +223,21 @@
                     Grid.Row="4"
                     Grid.Column="0"
                     Header="ResinListItemAllowOriginalResin"
-                    IsOn="False"
+                    IsOn="True"
                     Toggled="ResinListItemAllowOriginalResin" />
                 <ToggleSwitch
                     x:Name="ResinListItemAllowPrimogem_Toggle"
                     Grid.Row="4"
                     Grid.Column="1"
                     Header="ResinListItemAllowPrimogem"
-                    IsOn="False"
+                    IsOn="True"
                     Toggled="ResinListItemAllowPrimogem" />
                 <ToggleSwitch
                     x:Name="ResinListItemAllowFragileResin_Toggle"
                     Grid.Row="4"
                     Grid.Column="2"
                     Header="ResinListItemAllowFragileResin"
-                    IsOn="False"
+                    IsOn="True"
                     Toggled="ResinListItemAllowFragileResin" />
 
                 <ToggleSwitch
@@ -245,14 +245,14 @@
                     Grid.Row="5"
                     Grid.Column="0"
                     Header="ResinListItemAllowTransientResin"
-                    IsOn="False"
+                    IsOn="True"
                     Toggled="ResinListItemAllowTransientResin" />
                 <ToggleSwitch
                     x:Name="ResinListItemAllowCondensedResin_Toggle"
                     Grid.Row="5"
                     Grid.Column="1"
                     Header="ResinListItemAllowCondensedResin"
-                    IsOn="False"
+                    IsOn="True"
                     Toggled="ResinListItemAllowCondensedResin" />
             </Grid>
         </StackPanel>
