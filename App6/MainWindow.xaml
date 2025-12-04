@@ -18,7 +18,7 @@
         AlwaysShowHeader="True"
         Background="Transparent"
         ExpandedModeThresholdWidth="500"
-        Header="Toolbox v6.1b1"
+        Header="Sigewinne Toolbox v6.2b0 (Lite)"
         IsBackButtonVisible="Auto"
         IsBackEnabled="False"
         IsSettingsVisible="True"
@@ -219,6 +219,7 @@
                     Toggled="UsingTouchScreen" />
 
                 <ToggleSwitch
+                    IsEnabled="False"
                     x:Name="ResinListItemAllowOriginalResin_Toggle"
                     Grid.Row="4"
                     Grid.Column="0"
@@ -226,6 +227,7 @@
                     IsOn="True"
                     Toggled="ResinListItemAllowOriginalResin" />
                 <ToggleSwitch
+                    IsEnabled="False"
                     x:Name="ResinListItemAllowPrimogem_Toggle"
                     Grid.Row="4"
                     Grid.Column="1"
@@ -233,6 +235,7 @@
                     IsOn="True"
                     Toggled="ResinListItemAllowPrimogem" />
                 <ToggleSwitch
+                    IsEnabled="False"
                     x:Name="ResinListItemAllowFragileResin_Toggle"
                     Grid.Row="4"
                     Grid.Column="2"
@@ -241,6 +244,7 @@
                     Toggled="ResinListItemAllowFragileResin" />
 
                 <ToggleSwitch
+                    IsEnabled="False"
                     x:Name="ResinListItemAllowTransientResin_Toggle"
                     Grid.Row="5"
                     Grid.Column="0"
@@ -248,6 +252,7 @@
                     IsOn="True"
                     Toggled="ResinListItemAllowTransientResin" />
                 <ToggleSwitch
+                    IsEnabled="False"
                     x:Name="ResinListItemAllowCondensedResin_Toggle"
                     Grid.Row="5"
                     Grid.Column="1"

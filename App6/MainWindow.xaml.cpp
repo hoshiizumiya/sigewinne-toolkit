@@ -195,33 +195,32 @@ namespace winrt::App6::implementation
         penv = (IslandEnvironment*)MapViewOfFile(_Notnull_ h, FILE_MAP_READ | FILE_MAP_WRITE, 0, 0, 0);
 
         ZeroMemory(penv, sizeof(IslandEnvironment));
-        penv->IslandFunctionOffsets.MickeyWonderMethod = 97683856;
-        penv->IslandFunctionOffsets.MickeyWonderMethodPartner = 4054192;
-        penv->IslandFunctionOffsets.MickeyWonderMethodPartner2 = 186683024;
-        penv->IslandFunctionOffsets.SetFieldOfView = 16938096;
-        penv->IslandFunctionOffsets.SetEnableFogRendering = 349320976;
-        penv->IslandFunctionOffsets.SetTargetFrameRate = 349239824;
-        penv->IslandFunctionOffsets.OpenTeam = 260760016;
-        penv->IslandFunctionOffsets.OpenTeamPageAccordingly = 260940064;
-        penv->IslandFunctionOffsets.CheckCanEnter = 206502784;
-        penv->IslandFunctionOffsets.SetupQuestBanner = 220247008;
-        penv->IslandFunctionOffsets.FindGameObject = 349252176;
-        penv->IslandFunctionOffsets.SetActive = 349251472;
-        penv->IslandFunctionOffsets.EventCameraMove = 109003424;
-        penv->IslandFunctionOffsets.ShowOneDamageTextEx = 265242752;
-        penv->IslandFunctionOffsets.SwitchInputDeviceToTouchScreen = 208642176;
-        penv->IslandFunctionOffsets.MickeyWonderCombineEntryMethod = 256735408;
-        penv->IslandFunctionOffsets.MickeyWonderCombineEntryMethodPartner = 111928560;
-        penv->IslandFunctionOffsets.GetTargetFrameRate = 19127664;
-        penv->IslandFunctionOffsets.GameManagerAwake = 204333664;
-        penv->IslandFunctionOffsets.SetupResinList = 109454912;
-        penv->IslandFunctionOffsets.ResinListRemove = 0x13CDA8C0;
-        penv->IslandFunctionOffsets.ResinList = 0x1F0;
-        penv->IslandFunctionOffsets.ResinListGetItem = 0x13CD8FF0;
-        penv->IslandFunctionOffsets.ResinListGetCount = 0x13CD8F90;
-        penv->IslandFunctionOffsets.SetLastUid = 0x0F43BA90;
+        penv->IslandFunctionOffsets.MickeyWonderMethod = 0x5e0d680; //
+        penv->IslandFunctionOffsets.MickeyWonderMethodPartner = 0x3e87b0; //
+        penv->IslandFunctionOffsets.MickeyWonderMethodPartner2 = 0x7728b90; //
+        penv->IslandFunctionOffsets.SetFieldOfView = 0x10407c0; //
+        penv->IslandFunctionOffsets.SetEnableFogRendering = 0x14f2cb90; //
+        penv->IslandFunctionOffsets.SetTargetFrameRate = 0x14f18ea0; //
+        penv->IslandFunctionOffsets.OpenTeam = 0xb8dcfa0; //
+        penv->IslandFunctionOffsets.OpenTeamPageAccordingly = 0xb8e5fb0;
+        penv->IslandFunctionOffsets.CheckCanEnter = 0x954f230; //
+        penv->IslandFunctionOffsets.SetupQuestBanner = 0xdbb1320; //
+        penv->IslandFunctionOffsets.FindGameObject = 0x14f1bf20; //
+        penv->IslandFunctionOffsets.SetActive = 0x14f1bc60; //
+        penv->IslandFunctionOffsets.EventCameraMove = 0xe076e80; //
+        penv->IslandFunctionOffsets.ShowOneDamageTextEx = 0xfea2160; //
+        penv->IslandFunctionOffsets.SwitchInputDeviceToTouchScreen = 0xab06670; //
+        penv->IslandFunctionOffsets.MickeyWonderCombineEntryMethod = 0xa0a2d00; //
+        penv->IslandFunctionOffsets.MickeyWonderCombineEntryMethodPartner = 0x84fb720; //
+        penv->IslandFunctionOffsets.GetTargetFrameRate = 0x125a050; //
+        penv->IslandFunctionOffsets.GameManagerAwake = 0xc4007c0; //
+        //penv->IslandFunctionOffsets.SetupResinList = 0xd03a400; //!!!!!!!!!!
+        //penv->IslandFunctionOffsets.ResinListRemove = 0x13CDA8C0;
+        //penv->IslandFunctionOffsets.ResinList = 0x1F0;
+        //penv->IslandFunctionOffsets.ResinListGetItem = 0x13CD8FF0;
+        //penv->IslandFunctionOffsets.ResinListGetCount = 0x13CD8F90;
+        //penv->IslandFunctionOffsets.SetLastUid = 0x0F43BA90;
     }
-
 
 
     void MainWindow::viewloaded(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
