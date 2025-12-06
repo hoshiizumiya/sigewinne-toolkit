@@ -9,26 +9,36 @@
     xmlns:controls="using:App6"
     mc:Ignorable="d">
     <Border Padding="20">
-        <ScrollViewer
-        >
+        <ScrollViewer>
 
 
             <StackPanel Spacing="3">
-                <controls:SettingsCard x:Name="DisplayCard"/>
-                <controls:SettingsCard x:Name="SoundCard"/>
-                <controls:SettingsCard x:Name="NotificationsCard1"/>
-                <controls:SettingsCard x:Name="NotificationsCard2"/>
-                <controls:SettingsCard x:Name="NotificationsCard3"/>
-                <controls:SettingsCard x:Name="NotificationsCard4"/>
-                <controls:SettingsCard x:Name="NotificationsCard5"/>
-                <controls:SettingsCard x:Name="NotificationsCard6"/>
-                <controls:SettingsCard x:Name="NotificationsCard7"/>
-                <controls:SettingsCard x:Name="NotificationsCard8"/>
-                <controls:SettingsCard x:Name="NotificationsCard9"/>
-                <controls:SettingsCard x:Name="NotificationsCard10"/>
-                <controls:SettingsCard x:Name="NotificationsCard11"/>
-                <controls:SettingsCard x:Name="NotificationsCard12"/>
-                <controls:SettingsCard x:Name="NotificationsCard13"/>
+                <controls:SettingsCard x:Name="settingsCard"
+                               Description="Take advantage of monitors that support HDR for brighter, more vivid, and more detailed pictures"
+                               Header="Windows HDR"
+                               
+                />
+                <controls:SettingsCard x:Name="settingsCard1"
+                               Description="Modify its default behavior at game startup"
+                               Header="Launch Parameters"
+                               
+                />
+                <controls:SettingsCard x:Name="settingsCard2"
+                               Description="Incompatible with embedded browsers; operations like switching window may cause the game to crash"
+                               Header="-window-mode exclusive"
+                               
+                />
+                <controls:SettingsCard x:Name="settingsCard3"
+                               Description="Overwrite default fullscreen status"
+                               Header="-screen-fullscreen"
+                               
+                />
+                <controls:SettingsCard x:Name="settingsCard4"
+                               Description="Create window as popup, without frame"
+                               Header="-popupwindow"
+                               
+                />
+
             </StackPanel>
 
         </ScrollViewer>

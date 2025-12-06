@@ -5,5 +5,13 @@ namespace App6
     {
         SettingsCard();
 
+        static Microsoft.UI.Xaml.DependencyProperty HeaderProperty{ get; };
+        String Header;
+
+        static Microsoft.UI.Xaml.DependencyProperty DescriptionProperty{ get; };
+        String Description;
+
+        static Microsoft.UI.Xaml.DependencyProperty IsOnProperty{ get; };
+        Boolean IsOn;
     }
 }

@@ -12,5 +12,24 @@ using namespace Microsoft::UI::Xaml;
 
 namespace winrt::App6::implementation
 {
+    DependencyProperty SettingsCard::s_HeaderProperty =
+        winrt::Microsoft::UI::Xaml::DependencyProperty::Register(
+            L"Header",
+            winrt::xaml_typename<winrt::hstring>(),
+            winrt::xaml_typename<winrt::App6::SettingsCard>(),
+            winrt::Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(L"Default value") });
 
+    DependencyProperty SettingsCard::s_DescriptionProperty =
+        winrt::Microsoft::UI::Xaml::DependencyProperty::Register(
+            L"Description",
+            winrt::xaml_typename<winrt::hstring>(),
+            winrt::xaml_typename<winrt::App6::SettingsCard>(),
+            winrt::Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(L"Default value") });
+
+    DependencyProperty SettingsCard::s_IsOnProperty =
+        winrt::Microsoft::UI::Xaml::DependencyProperty::Register(
+            L"IsOn",
+            winrt::xaml_typename<winrt::hstring>(),
+            winrt::xaml_typename<winrt::App6::SettingsCard>(),
+            winrt::Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(false) });
 }
