@@ -28,5 +28,21 @@ namespace winrt::App6::implementation
 
 void winrt::App6::implementation::HomePage::SelectorBar2_SelectionChanged(winrt::Microsoft::UI::Xaml::Controls::SelectorBar const& sender, winrt::Microsoft::UI::Xaml::Controls::SelectorBarSelectionChangedEventArgs const& args)
 {
-    contentFrame().Navigate(xaml_typename<App6::LaunchGamePage>());
+    auto item = sender.SelectedItem();
+    uint32_t currentSelectedIndex;
+    sender.Items().IndexOf(item, currentSelectedIndex);
+
+    switch (currentSelectedIndex)
+    {
+    case 0:
+        contentFrame().Navigate(xaml_typename<App6::LaunchGamePage>());
+        break;
+    case 1:
+        contentFrame().Navigate(xaml_typename<App6::IslandPage>());
+        break;
+    default:
+        contentFrame().Navigate(xaml_typename<App6::LaunchGamePage>());
+        break;
+    }
+    
 }
