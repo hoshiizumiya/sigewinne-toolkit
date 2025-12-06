@@ -28,6 +28,7 @@
         PaneDisplayMode="Auto"
         SelectionFollowsFocus="Disabled"
         SelectionChanged="NavigationView_SelectionChanged"
+        OpenPaneLength="200"
         >
 
         <NavigationView.MenuItems>
@@ -58,8 +59,15 @@
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
         </NavigationView.MenuItems>
+        <NavigationView.FooterMenuItems>
+            <NavigationViewItem Content="Account" Icon="Contact" ToolTipService.ToolTip="Account" Tag="SamplePage2">
+            </NavigationViewItem>
 
-        <Frame x:Name="contentFrame"/>
+
+        </NavigationView.FooterMenuItems>
+
+
+        <Frame x:Name="contentFrame" Padding="010"/>
         
 
     </NavigationView>

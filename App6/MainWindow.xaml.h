@@ -34,6 +34,7 @@ namespace winrt::App6::implementation
             auto appWindow = winrt::Microsoft::UI::Windowing::AppWindow::GetFromWindowId(windowId);
             appWindow.Closing([&](auto&&, auto&&)
                 {
+
                     //saveConfig();
 				});
 
