@@ -150,6 +150,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="config.h" />
+    <ClInclude Include="Settings.h" />
     <ClInclude Include="SettingsCard.xaml.h">
       <DependentUpon>SettingsCard.xaml</DependentUpon>
       <SubType>Code</SubType>

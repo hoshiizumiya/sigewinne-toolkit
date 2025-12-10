@@ -41,6 +41,9 @@
     <ClInclude Include="LaunchGame.h">
       <Filter>Service</Filter>
     </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Service</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
