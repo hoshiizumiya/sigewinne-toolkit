@@ -142,6 +142,7 @@
       <DependentUpon>LaunchGamePage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="HoYoLogin.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
@@ -182,6 +183,7 @@
       <SubType>Code</SubType>
     </ClCompile>
     <ClCompile Include="LaunchGame.cpp" />
+    <ClCompile Include="HoYoLogin.cpp" />
     <ClCompile Include="settings.cpp" />
     <ClInclude Include="LaunchGame.h" />
     <ClCompile Include="LaunchGamePage.xaml.cpp">

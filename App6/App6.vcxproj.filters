@@ -35,6 +35,9 @@
     <ClCompile Include="settings.pb.cc">
       <Filter>Service</Filter>
     </ClCompile>
+    <ClCompile Include="HoYoLogin.cpp">
+      <Filter>Service\Account</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -49,6 +52,9 @@
     </ClInclude>
     <ClInclude Include="settings.pb.h">
       <Filter>Service</Filter>
+    </ClInclude>
+    <ClInclude Include="HoYoLogin.h">
+      <Filter>Service\Account</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +89,9 @@
     </Filter>
     <Filter Include="Service">
       <UniqueIdentifier>{ebf41ea4-0dc7-48af-9f6c-0350ed9e06f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Service\Account">
+      <UniqueIdentifier>{7c9d3115-5826-41cd-8e92-d2da310f7e13}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
