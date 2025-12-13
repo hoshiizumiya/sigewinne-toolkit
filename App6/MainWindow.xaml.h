@@ -32,7 +32,7 @@ namespace winrt::App6::implementation
             this->AppWindow().Closing([&](auto&&, auto&&)
                 {
 
-                    MessageBoxA(0, "a", "a", 0);
+                    ;
 				});
 
 			this->ExtendsContentIntoTitleBar(true);

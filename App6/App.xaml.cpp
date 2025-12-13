@@ -12,6 +12,7 @@ using namespace winrt::Microsoft::Windows::Globalization;
 
 namespace winrt::App6::implementation
 {
+    static App* app{ nullptr };
     /// <summary>
     /// Initializes the singleton application object.  This is the first line of authored code
     /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -32,6 +33,7 @@ namespace winrt::App6::implementation
             }
         });
 #endif
+        app = this;
     }
 
     /// <summary>
@@ -44,5 +46,17 @@ namespace winrt::App6::implementation
         window = make<MainWindow>();
         window.Activate();
         
+    }
+
+    void App::ToForeground()
+    {
+        assert(app != nullptr);
+
+        HWND hwnd;
+        auto windowNative{ app->window.as<IWindowNative>() };
+        if (windowNative && SUCCEEDED(windowNative->get_WindowHandle(&hwnd)))
+        {
+            SwitchToThisWindow(hwnd, TRUE);
+        }
     }
 }

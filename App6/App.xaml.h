@@ -9,7 +9,7 @@ namespace winrt::App6::implementation
         App();
 
         void OnLaunched(Microsoft::UI::Xaml::LaunchActivatedEventArgs const&);
-
+        static void ToForeground();
 
     private:
         winrt::Microsoft::UI::Xaml::Window window{ nullptr };
