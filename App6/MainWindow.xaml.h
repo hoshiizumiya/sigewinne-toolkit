@@ -13,6 +13,7 @@
 using namespace winrt;
 using namespace Microsoft::UI::Xaml;
 using namespace Microsoft::UI::Xaml::Controls;
+using namespace Microsoft::UI::Windowing;
 
 
 namespace winrt::App6::implementation
@@ -27,6 +28,7 @@ namespace winrt::App6::implementation
         {
             
             initializeEnv();
+
 			HWND hwnd{};
             auto windowNative = this->try_as<::IWindowNative>();
             windowNative->get_WindowHandle(&hwnd);
@@ -39,6 +41,8 @@ namespace winrt::App6::implementation
 				});
 
 			this->ExtendsContentIntoTitleBar(true);
+            this->AppWindow().TitleBar().PreferredHeightOption(TitleBarHeightOption::Standard);
+            this->AppWindow().TitleBar().PreferredTheme(TitleBarTheme::UseDefaultAppMode);
             // Xaml objects should not call InitializeComponent during construction.
             // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
         }
