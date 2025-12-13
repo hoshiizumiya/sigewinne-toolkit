@@ -42,6 +42,14 @@ message Island
 
 }
 
-message Settings {
-    Home        Home        = 1;
+message AppSettings
+{
+    bool            StealthMode                       =  1;
+    bool            CloseAsQuit                       =  2;
+}
+
+message Settings
+{
+    Home                          Home        = 1;
+    AppSettings                   AppSettings = 2;
 }
