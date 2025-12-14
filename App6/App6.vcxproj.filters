@@ -80,7 +80,6 @@
     <Image Include="Assets\LockScreenLogo.scale-200.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="icon1.ico" />
     <Image Include="Assets\Logo.ico" />
   </ItemGroup>
   <ItemGroup>
