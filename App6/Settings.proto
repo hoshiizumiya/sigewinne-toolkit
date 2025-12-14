@@ -46,10 +46,18 @@ message AppSettings
 {
     bool            StealthMode                       =  1;
     bool            CloseAsQuit                       =  2;
+
+}
+
+message PrivateVars
+{
+    int64           WindowRect                        =  1;
+    int32		    StartCount                        =  2;
 }
 
 message Settings
 {
     Home                          Home        = 1;
     AppSettings                   AppSettings = 2;
+    PrivateVars                   PrivateVars = 3;
 }
