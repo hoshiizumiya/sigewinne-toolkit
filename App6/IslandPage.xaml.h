@@ -14,16 +14,12 @@ namespace winrt::App6::implementation
     {
 
     private:
-        void init_environment();
-        IslandEnvironment* penv = nullptr;;
-        Service::Proto::Island* pisland = nullptr;
+
     public:
         IslandPage()
 
         {
-            init_environment();
-            
-            this->NavigationCacheMode(Microsoft::UI::Xaml::Navigation::NavigationCacheMode::Required);
+            this->NavigationCacheMode(Microsoft::UI::Xaml::Navigation::NavigationCacheMode::Disabled);
             // Xaml objects should not call InitializeComponent during construction.
             // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
         }

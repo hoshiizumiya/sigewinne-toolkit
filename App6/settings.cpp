@@ -5,6 +5,8 @@
 #include "wil/result.h"
 #include <filesystem>
 
+#include "island.h"
+
 namespace Service::Settings
 {
 	void LoadSettingsFromFile()
@@ -63,29 +65,54 @@ namespace Service::Settings
 
 	}
 
-	void a()
+	void init_environment()
 	{
+		if (!penv)
+		{
+			DWORD array[] = {
+				0xc4007c0, 0x5e0d680, 0x3e87b0, 0x7728b90, 0, 0x10407c0, 0x14f2cb90, 0x125a050, 0x14f18ea0, 0xb8dcfa0,
+				0xb8e5fb0, 0x954f230, 0xdbb1320, 0x14f1bf20, 0x14f1bc60, 0xe076e80, 0xfea2160, 0xab06670, 0xa0a2d00,
+				0x84fb720, 0, 0, 0, 0, 0
+			};
 
-		//auto str = to_string(Service::LaunchGame::g_path);
-		//g_settings.mutable_home()->set_gamepath(str);
-		g_settings.mutable_home()->mutable_launchgame()->set_usinghoyolabaccount(true);
-		g_settings.mutable_home()->mutable_launchgame()->set_arecommandlineargumentsenabled(true);
-		g_settings.mutable_home()->mutable_launchgame()->set_iswindowshdrenabled(true);
-		g_settings.mutable_home()->mutable_launchgame()->set_isfullscreen(false);
-		g_settings.mutable_home()->mutable_launchgame()->set_isscreenheightenabled(true);
-		g_settings.mutable_home()->mutable_launchgame()->set_screenwidth(1920);
-		g_settings.mutable_home()->mutable_launchgame()->set_screenheight(1080);
-		g_settings.mutable_home()->mutable_launchgame()->set_isscreenwidthenabled(true);
-		g_settings.mutable_home()->mutable_island()->set_enablesetfieldofview(true);
-		g_settings.mutable_home()->mutable_island()->set_fieldofview(75);
-		g_settings.mutable_home()->mutable_island()->set_fixlowfovscene(true);
-		g_settings.mutable_home()->mutable_island()->set_disablefog(true);
-		g_settings.mutable_home()->mutable_island()->set_enablesettargetframerate(true);
-		g_settings.mutable_home()->mutable_island()->set_targetframerate(120);
-		g_settings.mutable_home()->mutable_island()->set_removeopenteamprogress(true);
-		g_settings.mutable_home()->mutable_island()->set_hidequestbanner(true);
-		g_settings.mutable_home()->mutable_island()->set_disableeventcameramove(true);
-		//google::protobuf::util::MessageToJsonString(s, &json);
+			HANDLE h = OpenFileMapping(FILE_MAP_READ | FILE_MAP_WRITE, FALSE, L"4F3E8543-40F7-4808-82DC-21E48A6037A7"); //4F3E8543-40F7-4808-82DC-21E48A6037A7
+
+			if (h)
+			{
+				penv = (IslandEnvironment*)MapViewOfFile(_Notnull_ h, FILE_MAP_READ | FILE_MAP_WRITE, 0, 0, 0);
+				goto loc_1;
+			}
+
+			h = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_EXECUTE_READWRITE, 0, 1024, L"4F3E8543-40F7-4808-82DC-21E48A6037A7");
+			penv = (IslandEnvironment*)MapViewOfFile(_Notnull_ h, FILE_MAP_READ | FILE_MAP_WRITE, 0, 0, 0);
+			ZeroMemory(penv, sizeof(IslandEnvironment));
+
+			memcpy(reinterpret_cast<char*>(penv) + 16u, &array, sizeof(array));
+
+		loc_1:		pisland = Service::Settings::g_settings.mutable_home()->mutable_island();
+			if (!static_cast<int>(pisland->fieldofview()))
+			{
+				pisland->set_fieldofview(45);
+			}
+			if (!pisland->targetframerate())
+			{
+				pisland->set_targetframerate(60);
+			}
+
+			penv->FieldOfView = pisland->fieldofview();
+			penv->TargetFrameRate = pisland->targetframerate();
+			penv->EnableSetFieldOfView = pisland->enablesetfieldofview();
+			penv->FixLowFovScene = pisland->fixlowfovscene();
+			penv->DisableFog = pisland->disablefog();
+			penv->EnableSetTargetFrameRate = pisland->enablesettargetframerate();
+			penv->RemoveOpenTeamProgress = pisland->removeopenteamprogress();
+			penv->HideQuestBanner = pisland->hidequestbanner();
+			penv->DisableEventCameraMove = pisland->disableeventcameramove();
+			penv->DisableShowDamageText = pisland->disableshowdamagetext();
+			penv->UsingTouchScreen = pisland->usingtouchscreen();
+			penv->RedirectCombineEntry = pisland->redirectcombineentry();
+
+		}
 	}
 }
 

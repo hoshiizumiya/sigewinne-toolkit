@@ -1,6 +1,8 @@
 #pragma once
 
 #include "HomePage.g.h"
+#include "island.h"
+#include "Settings.h"
 
 namespace winrt::App6::implementation
 {
@@ -8,10 +10,12 @@ namespace winrt::App6::implementation
     {
         HomePage()
         {
-            this->NavigationCacheMode(Microsoft::UI::Xaml::Navigation::NavigationCacheMode::Required);
+            this->NavigationCacheMode(Microsoft::UI::Xaml::Navigation::NavigationCacheMode::Enabled);
             // Xaml objects should not call InitializeComponent during construction.
             // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
         }
+
+        
         void GamePath(hstring value);
 		hstring GamePath();
         void Button_KillProcess_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);

@@ -53,7 +53,7 @@ namespace winrt::App6::implementation
 	    {
 	    	MessageBoxW(0, L"LoadSettingsFromFile Error, ignore if firstrun", L"Warn", MB_OK | MB_ICONWARNING);
 	    }
-        
+        init_environment();
         ApplicationLanguages::PrimaryLanguageOverride(L"en-us");
         window = make<MainWindow>();
         window.Activate();
