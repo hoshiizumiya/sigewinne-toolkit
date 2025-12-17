@@ -10,7 +10,7 @@ namespace winrt::App6::implementation
     {
         HomePage()
         {
-            this->NavigationCacheMode(Microsoft::UI::Xaml::Navigation::NavigationCacheMode::Enabled);
+			this->NavigationCacheMode(Microsoft::UI::Xaml::Navigation::NavigationCacheMode::Disabled); // a bug in here might from Microsoft, NavigationCacheMode::Disabled is default
             // Xaml objects should not call InitializeComponent during construction.
             // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
         }
