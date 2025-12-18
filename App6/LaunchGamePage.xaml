@@ -12,19 +12,21 @@
         <ScrollViewer>
 
 
-            <StackPanel Spacing="3">
+            <StackPanel Margin="0,0,10,0" Spacing="3">
 
-                <controls:SettingsCard Description="You can use a FontIcon, SymbolIcon or BitmapIcon to set the cards HeaderIcon." Header="Icon options">
+                <controls:SettingsCard
+                    
+
+                    ContentAlignment="Right"
+                    Description="You can use a FontIcon, SymbolIcon or BitmapIcon to set the cards HeaderIcon."
+                    Header="Icon options">
 
 
                     <controls:SettingsCard.HeaderIcon>
                         <FontIcon Glyph="&#xE700;" />
                     </controls:SettingsCard.HeaderIcon>
-                    <ToggleSwitch />
+                    <ToggleSwitch MinWidth="10"  />
                 </controls:SettingsCard>
-
-
-
 
             </StackPanel>
 

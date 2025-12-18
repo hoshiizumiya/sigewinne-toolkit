@@ -169,6 +169,7 @@
       <DependentUpon>SettingsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="StyleExtensions.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -216,6 +217,7 @@
       <DependentUpon>SettingsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="StyleExtensions.cpp" />
     <ClInclude Include="LaunchGame.h" />
     <ClCompile Include="LaunchGamePage.xaml.cpp">
       <DependentUpon>LaunchGamePage.xaml</DependentUpon>
@@ -265,6 +267,7 @@
       <DependentUpon>SettingsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Midl>
+    <Midl Include="StyleExtensions.idl" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt">
