@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "MainView.xaml.h"
 #if __has_include("MainView.g.cpp")
 #include "MainView.g.cpp"
@@ -33,8 +33,4 @@ namespace winrt::App6::implementation
 		
 	}
 
-	void MainView::MainView_Loaded(const Windows::Foundation::IInspectable& sender, const RoutedEventArgs& e)
-	{
-		contentFrame().Navigate(xaml_typename<HomePage>());
-	}
 }

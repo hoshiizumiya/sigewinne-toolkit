@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "SettingsCard.h"
 #if __has_include("SettingsCard.g.cpp")
 #include "SettingsCard.g.cpp"

@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "LaunchGame.h"
 #include "HomePage.xaml.h"
 #if __has_include("HomePage.g.cpp")
