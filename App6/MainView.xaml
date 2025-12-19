@@ -124,7 +124,9 @@
                                         Margin="0,0"
                                         Padding="0,2"
                                         BorderThickness="0,0,1,0">
-                                        --><!--  米游社 登录  --><!--
+                -->
+                <!--  米游社 登录  -->
+                <!--
                                         <AppBarButton
                                             Width="100"
                                             MaxWidth="100"
@@ -156,7 +158,9 @@
                                                 </Flyout>
                                             </AppBarButton.Flyout>
                                         </AppBarButton>
-                                        --><!--  HoYoLAB 登录  --><!--
+                -->
+                <!--  HoYoLAB 登录  -->
+                <!--
                                         <AppBarButton
                                             Width="100"
                                             MaxWidth="100"
