@@ -26,12 +26,10 @@
     <Page Include="SettingsCard_res.xaml">
       <Filter>Controls</Filter>
     </Page>
+    <Page Include="ResourceDictionary.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="MainWindow.idl" />
-    <Midl Include="StyleExtensions.idl">
-      <Filter>Helpers</Filter>
-    </Midl>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -50,9 +48,6 @@
     </ClCompile>
     <ClCompile Include="SettingsCard.cpp">
       <Filter>Controls</Filter>
-    </ClCompile>
-    <ClCompile Include="StyleExtensions.cpp">
-      <Filter>Helpers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,9 +68,6 @@
       <Filter>Service\Account</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="StyleExtensions.h">
-      <Filter>Helpers</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
@@ -256,9 +248,6 @@
     </Filter>
     <Filter Include="Controls">
       <UniqueIdentifier>{cf3eecf3-5d69-43ac-a170-7ac98bbe943e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Helpers">
-      <UniqueIdentifier>{e59b1c96-9d65-407e-b3cb-b77e748013c0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

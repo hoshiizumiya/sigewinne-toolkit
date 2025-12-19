@@ -48,22 +48,36 @@ namespace winrt::App6::implementation
         sender.Items().IndexOf(item, currentSelectedIndex);
         SlideNavigationTransitionInfo slideInfo{};
 
+        if (currentSelectedIndex >= m_selected_index)
+        {
+	        if (currentSelectedIndex == m_selected_index)
+	        {
+				//not user select from Selector bar, default animation
+                slideInfo.Effect(SlideNavigationTransitionEffect::FromBottom);
+	        }
+	        else
+	        {
+                slideInfo.Effect(SlideNavigationTransitionEffect::FromRight);
+	        }
+        }
+        else
+        {
+            slideInfo.Effect(SlideNavigationTransitionEffect::FromLeft);
+        }
+
         switch (currentSelectedIndex)
         {
         case 0:
-			currentSelectedIndex == m_selected_index ? slideInfo.Effect(SlideNavigationTransitionEffect::FromBottom) : slideInfo.Effect(SlideNavigationTransitionEffect::FromRight);
-            m_selected_index = currentSelectedIndex;
         	contentFrame().Navigate(xaml_typename<App6::LaunchGamePage>(), nullptr, slideInfo);
             break;
         case 1:
-        	slideInfo.Effect(SlideNavigationTransitionEffect::FromLeft);
-            m_selected_index = currentSelectedIndex;
         	contentFrame().Navigate(xaml_typename<App6::IslandPage>(), nullptr, slideInfo);
             break;
         default:
             break;
         }
 
+        m_selected_index = currentSelectedIndex;
     }
 
 
