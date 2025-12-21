@@ -1,4 +1,4 @@
-{
+﻿{
 
     "source": "https://example.com/toolkit.Install.exe",
 
@@ -18,7 +18,7 @@
 
     "title": "sigewinne toolkit",
 
-    "description": "v6.2b3",
+    "description": "v6.2b4",
 
     "windowBorderless": true,
 
