@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <microsoft.ui.xaml.window.h>
 #include <wil/result_macros.h>
@@ -26,6 +26,7 @@ namespace winrt::App6::implementation
     private:
         HWND _hwnd{ nullptr };
         HWND GetWindowHandle();
+        void AddNotifyIcon();
 		void Exp1();
         void Exp2();
 

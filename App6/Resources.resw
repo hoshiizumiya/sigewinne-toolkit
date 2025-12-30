@@ -240,4 +240,7 @@
   <data name="ViewPageSettingsLanguageOverride.Header" xml:space="preserve">
     <value>Language Override</value>
   </data>
+  <data name="NotifyIconName" xml:space="preserve">
+    <value>sigewinne toolkit</value>
+  </data>
 </root>
