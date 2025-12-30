@@ -13,6 +13,18 @@ using namespace Service::Settings;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
+int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
+{
+    winrt::init_apartment(winrt::apartment_type::single_threaded);
+    ::winrt::Microsoft::UI::Xaml::Application::Start(
+        [](auto&&)
+        {
+            ::winrt::make<::winrt::App6::implementation::App>();
+        });
+
+    return 0;
+}
+
 namespace winrt::App6::implementation
 {
     static App* app{ nullptr };
