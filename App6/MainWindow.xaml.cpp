@@ -8,7 +8,9 @@
 #include <winrt/Microsoft.Windows.ApplicationModel.Resources.h>
 #include "resource.h"
 #include <commctrl.h>
+#include <Settings.h>
 
+using namespace Service::Settings;
 using namespace Microsoft::Windows::ApplicationModel::Resources;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -18,45 +20,9 @@ namespace winrt::App6::implementation
 
 	MainWindow::MainWindow()
 	{
-		this->ExtendsContentIntoTitleBar(true); // this should be first
-		this->GetWindowHandle();
-		sub_180001230();
-		//this->Exp1();
-		this->AppWindow().TitleBar().PreferredHeightOption(TitleBarHeightOption::Tall);
-		this->AppWindow().TitleBar().PreferredTheme(TitleBarTheme::UseDefaultAppMode);
-		this->AppWindow().SetIcon(L"Assets\\Logo.ico");
-		UINT dpi = GetDpiForWindow(GetWindowHandle());
-		THROW_HR_IF(E_INVALIDARG, 0 == dpi);
-		auto scale = floorf(dpi * 100.0f / 96.0f + 0.5f) / 100.0f;
-		this->AppWindow().Presenter().try_as<OverlappedPresenter>().PreferredMinimumWidth(static_cast<int32_t>(1000 * scale));
-		this->AppWindow().Presenter().try_as<OverlappedPresenter>().PreferredMinimumHeight(static_cast<int32_t>(600 * scale));
-		this->AddNotifyIcon();
-
-		SetWindowSubclass(_hwnd, 
-			[](HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam, UINT_PTR uIdSubclass, DWORD_PTR dwRefData)->LRESULT
-			{
-				if (uMsg == reinterpret_cast<MainWindow*>(dwRefData)->dword_1800317B8)
-				{
-					if (LOWORD(lParam) == WM_RBUTTONUP)
-					{
-						//
-					}
-
-					
-				}
-
-				return DefSubclassProc(hWnd, uMsg, wParam, lParam);
-			} ,
-			1, reinterpret_cast<DWORD_PTR>(this));
+		InitWindow();
 		// Xaml objects should not call InitializeComponent during construction.
 		// See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
-
-		this->AppWindow().Closing([this](auto sender, AppWindowClosingEventArgs args)
-			{
-				args.Cancel(true);
-				
-			});
-		this->Activate();
 	}
 
     HWND MainWindow::GetWindowHandle()
@@ -69,17 +35,6 @@ namespace winrt::App6::implementation
         return _hwnd;
     }
 
-	UINT MainWindow::sub_180001230()
-	{
-		std::once_flag icon_flag;
-		std::call_once(icon_flag, [this]()
-		{
-			this->dword_1800317B8 = RegisterWindowMessageW(L"SigewinneToolkitNotifyIconCallback");
-		});
-
-		return dword_1800317B8;
-	}
-
     void MainWindow::AddNotifyIcon()
     {
 
@@ -89,17 +44,31 @@ namespace winrt::App6::implementation
 		
 		ResourceLoader loader;
 		hstring appname = loader.GetString(L"NotifyIconName");
+
 		guid gNotifyIcon("21a2acbc-3a44-43c8-860a-f8e7151b2623");
 		NOTIFYICONDATAW nid = {};
 		nid.cbSize = sizeof(NOTIFYICONDATAW);
-		nid.hWnd = _hwnd;
-		nid.uID = 1;
+		nid.hWnd = GetWindowHandle();
+		nid.uID = 0;
 		nid.guidItem = gNotifyIcon;
-		nid.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP | NIF_GUID;
-		nid.uCallbackMessage = dword_1800317B8;
+		nid.hBalloonIcon = 0;
+		nid.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP | NIF_GUID | NIF_STATE;
+		nid.uCallbackMessage = NotifyIconCallbackMessage;
 		nid.hIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1));
 		wcscpy_s(nid.szTip, appname.c_str());
-		Shell_NotifyIconW(NIM_ADD, &nid);
+		if (Shell_NotifyIconW(NIM_ADD, &nid))
+		{
+			nid.cbSize = 976;
+			nid.hWnd = 0;
+			nid.uID = 0;
+			nid.uFlags = NIF_GUID;
+			memset(&nid.hIcon, 0, 784);
+			nid.uVersion = NOTIFYICON_VERSION_4;
+			memset(nid.szInfoTitle, 0, 132);
+			nid.hBalloonIcon = 0;
+			Shell_NotifyIconW(NIM_SETVERSION, &nid);
+		}
+		
     }
 
     void MainWindow::Exp1()
@@ -132,9 +101,76 @@ namespace winrt::App6::implementation
 		reinterpret_cast<IUnknown*>(result)->Release();
 	}
 
+	void MainWindow::InitWindow()
+	{
+		// TitleBar
+
+		this->ExtendsContentIntoTitleBar(true); // this should be first
+		this->AppWindow().TitleBar().PreferredHeightOption(TitleBarHeightOption::Tall);
+		this->AppWindow().TitleBar().PreferredTheme(TitleBarTheme::UseDefaultAppMode);
+		this->AppWindow().SetIcon(L"Assets\\Logo.ico");
+
+		// Window
+
+		UINT dpi = GetDpiForWindow(GetWindowHandle());
+		THROW_HR_IF(E_INVALIDARG, 0 == dpi);
+		auto scale = floorf(dpi * 100.0f / 96.0f + 0.5f) / 100.0f;
+		this->AppWindow().Presenter().try_as<OverlappedPresenter>().PreferredMinimumWidth(static_cast<int32_t>(1000 * scale));
+		this->AppWindow().Presenter().try_as<OverlappedPresenter>().PreferredMinimumHeight(static_cast<int32_t>(600 * scale));
+
+		// NotifyIcon
+
+		this->TaskbarCreatedMessage = RegisterWindowMessageW(L"TaskbarCreated");
+		this->NotifyIconCallbackMessage = RegisterWindowMessageW(L"SigewinneToolkitNotifyIconCallback");
+		this->AddNotifyIcon();
+
+		SetWindowSubclass(GetWindowHandle(),
+			[](HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam, UINT_PTR uIdSubclass, DWORD_PTR dwRefData)->LRESULT
+			{
+				#define this reinterpret_cast<MainWindow*>(dwRefData)
+
+				if (uMsg == this->NotifyIconCallbackMessage)
+				{
+					if (LOWORD(lParam) == WM_RBUTTONUP || LOWORD(lParam) == WM_LBUTTONUP)
+					{
+						reinterpret_cast<MainWindow*>(dwRefData)->Activate();
+
+					}
+
+				}
+				if (uMsg == this->TaskbarCreatedMessage)
+				{
+					this->AddNotifyIcon();
+				}
+				return DefSubclassProc(hWnd, uMsg, wParam, lParam);
+
+				#undef this
+			},
+			1, reinterpret_cast<DWORD_PTR>(this));
+
+		//  Callback
+
+		this->AppWindow().Closing([this](auto sender, AppWindowClosingEventArgs args)
+			{
+				args.Cancel(false);
+
+			});
+
+		// ShowWindow
+
+		this->Exp1();
+		this->Activate();
+		if (pappsettings->stealthmode())
+		{
+			this->AppWindow().Hide();
+		}
+
+	}
+
+	void MainWindow::Window_Closed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::WindowEventArgs const& args)
+	{
+		Exp2();
+	}
 }
 
-void winrt::App6::implementation::MainWindow::Window_Closed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::WindowEventArgs const& args)
-{
-	Exp2();
-}
+

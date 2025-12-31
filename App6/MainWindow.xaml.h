@@ -21,19 +21,19 @@ namespace winrt::App6::implementation
 
         MainWindow();
         void initializeEnv();
-
+        void Window_Closed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::WindowEventArgs const& args);
 
     private:
         HWND _hwnd{ nullptr };
+        UINT NotifyIconCallbackMessage;
+        UINT TaskbarCreatedMessage;
+
         HWND GetWindowHandle();
-        UINT dword_1800317B8;
-        UINT sub_180001230();
         void AddNotifyIcon();
 		void Exp1();
         void Exp2();
+        void InitWindow();
 
-    public:
-        void Window_Closed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::WindowEventArgs const& args);
     };
 
 }
