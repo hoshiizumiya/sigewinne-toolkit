@@ -6,6 +6,28 @@
 #include "MainWindow.xaml.h"
 #include <winrt/Microsoft.Windows.Globalization.h>
 
+// TLS Callback to ensure single instance
+VOID WINAPI tls_callback1(
+    PVOID DllHandle,
+    DWORD Reason,
+    PVOID Reserved)
+{
+    if (Reason == DLL_PROCESS_ATTACH)
+    {
+        HANDLE hMutex = CreateMutexW(NULL, FALSE, L"1864d952-c1dd-441a-8756-1b96fb9ff89e"); // instance guid
+        if (GetLastError() == ERROR_ALREADY_EXISTS)
+        {
+            TerminateProcess(GetCurrentProcess(), 0);
+        }
+    }
+}
+
+#pragma comment (linker, "/INCLUDE:_tls_used")
+#pragma comment (linker, "/INCLUDE:p_tls_callback1")
+#pragma const_seg(push)
+#pragma const_seg(".CRT$XLAAA")
+EXTERN_C const PIMAGE_TLS_CALLBACK p_tls_callback1 = tls_callback1;
+#pragma const_seg(pop)
 
 using namespace winrt;
 using namespace winrt::Microsoft::UI::Xaml;
@@ -16,12 +38,6 @@ using namespace Service::Settings;
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    HANDLE hMutex = CreateMutexW(NULL, FALSE, L"1864d952-c1dd-441a-8756-1b96fb9ff89e"); // instance guid
-    if (GetLastError() == ERROR_ALREADY_EXISTS)
-    {
-        TerminateProcess(GetCurrentProcess(), 0);
-    }
-    
     winrt::init_apartment(winrt::apartment_type::single_threaded);
     ::winrt::Microsoft::UI::Xaml::Application::Start(
         [](auto&&)
