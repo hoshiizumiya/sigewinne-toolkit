@@ -30,18 +30,30 @@ jobs:
         ref: refs/heads/dev
       
     - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@v2
 
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
 
-    - name: Run vcpkg install
+    - name: vcpkg
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: vcpkg install
-
+      run: vcpkg integrate install
+    
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Platform=x64 /p:PlatformToolset=v143 /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+
+    - name: Prepare Upload Artifact
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+            powershell -Command "Copy-Item './x64/Release/App6' './artifact_temp/App6' -Recurse -Force -Exclude '*.pdb','*.exp','*.lib','*.xbf','*.winmd'"
+            powershell -Command "Rename-Item -Path '.\artifact_temp\App6\App6.exe' -NewName 'toolbox.exe'"
+            powershell -Command "Rename-Item -Path '.\artifact_temp\App6\App6.pri' -NewName 'toolbox.pri'"
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v5.0.0
+      with:
+        path: ${{ github.workspace }}\artifact_temp\App6*

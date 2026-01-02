@@ -49,6 +49,9 @@
     <ClCompile Include="SettingsCard.cpp">
       <Filter>Controls</Filter>
     </ClCompile>
+    <ClCompile Include="Security.cpp">
+      <Filter>Service</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -258,14 +261,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Settings.proto">
+      <Filter>Service</Filter>
+    </None>
+    <None Include="proto.props" />
+    <None Include="proto.targets" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="App6.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Settings.proto">
-      <Filter>Service</Filter>
-    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natvis" />
@@ -273,6 +276,9 @@
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="Resources.resw">
+      <Filter>Resource</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\zh-CN\Resources.resw">
       <Filter>Resource</Filter>
     </PRIResource>
   </ItemGroup>

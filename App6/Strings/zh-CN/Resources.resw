@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,129 +118,114 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ViewPageIslandDisableShowDamageText.Header" xml:space="preserve">
-    <value>Disable Damage Numbers</value>
+    <value>移除战斗伤害跳字</value>
   </data>
   <data name="ViewPageIslandDisableFog.Header" xml:space="preserve">
-    <value>Remove Fog</value>
+    <value>移除迷雾</value>
   </data>
   <data name="ViewPageIslandEventCameraMoveHotSwitch.Header" xml:space="preserve">
-    <value>Disable Elemental Burst Animation</value>
+    <value>移除元素爆发镜头特写</value>
   </data>
   <data name="ViewPageIslandFixLowFovScene.Header" xml:space="preserve">
-    <value>Special Interface Fix</value>
+    <value>特殊界面修正</value>
   </data>
   <data name="ViewPageIslandHideQuestBannerHotSwitch.Header" xml:space="preserve">
-    <value>Close map banner</value>
+    <value>关闭地图横幅</value>
   </data>
   <data name="ViewPageIslandRedirectCombineEntry.Header" xml:space="preserve">
-    <value>Crafting Redirect</value>
+    <value>重定向合成</value>
   </data>
   <data name="ViewPageIslandResinListItemAllowCondensedResin.Header" xml:space="preserve">
-    <value>Claim Rewards with Condensed Resin</value>
+    <value>使用浓缩树脂领取奖励</value>
   </data>
   <data name="ViewPageIslandResinListItemAllowFragileResin.Header" xml:space="preserve">
-    <value>Claim Rewards with Fragile Resin</value>
+    <value>使用脆弱树脂领取奖励</value>
   </data>
   <data name="ViewPageIslandResinListItemAllowPrimogem.Header" xml:space="preserve">
-    <value>Claim Rewards with Primogem</value>
+    <value>使用原石领取奖励</value>
   </data>
   <data name="ViewPageIslandResinListItemAllowTransientResin.Header" xml:space="preserve">
-    <value>Claim Rewards with Transient Resin</value>
+    <value>使用须臾树脂领取奖励</value>
   </data>
   <data name="ViewPageIslandUsingTouchScreen.Header" xml:space="preserve">
-    <value>Use Touch Input</value>
+    <value>使用触摸输入</value>
   </data>
   <data name="ViewPageHomeGameOptions.Text" xml:space="preserve">
-    <value>Game Options</value>
+    <value>游戏选项</value>
   </data>
   <data name="ViewPageIslandRemoveOpenTeamProgress.Header" xml:space="preserve">
-    <value>Remove Team Configuration Progress Bar</value>
+    <value>移除队伍配置进度条</value>
   </data>
   <data name="ViewPageIslandTargetFov.Header" xml:space="preserve">
-    <value>Adjust FOV</value>
+    <value>调整视野</value>
   </data>
   <data name="ViewPageIslandTargetFovHotSwitch.Header" xml:space="preserve">
-    <value>Field of View Hot Switch</value>
+    <value>视野热开关</value>
   </data>
   <data name="ViewPageIslandTargetFps.Header" xml:space="preserve">
-    <value>Target Frame Rate</value>
+    <value>目标帧率</value>
   </data>
   <data name="ViewPageIslandTargetFpsHotSwitch.Header" xml:space="preserve">
-    <value>Frame Rate Hot Switch</value>
+    <value>帧率热开关</value>
   </data>
   <data name="ViewPageHomeInjectionOptions.Text" xml:space="preserve">
-    <value>Injection Options</value>
+    <value>注入选项</value>
   </data>
   <data name="ViewPageIslandResinListItemAllowOriginalResin.Header" xml:space="preserve">
-    <value>Claim Rewards with Original Resin</value>
+    <value>使用原粹树脂领取奖励</value>
   </data>
   <data name="ViewPageLaunchGameWindowsHDR.Header" xml:space="preserve">
     <value>Windows HDR</value>
   </data>
   <data name="ViewPageLaunchGameWindowsHDR.Description" xml:space="preserve">
-    <value>Take advantage of monitors that support HDR for brighter, more vivid, and more detailed pictures</value>
+    <value>充分利用支持高动态范围的显示器获得更亮、更生动、更精细的画面</value>
   </data>
   <data name="ViewPageLaunchGameArguments.Header" xml:space="preserve">
-    <value>Launch Parameters</value>
+    <value>启动参数</value>
   </data>
   <data name="ViewPageLaunchGameArguments.Description" xml:space="preserve">
-    <value>Modify its default behavior at game startup</value>
+    <value>在游戏启动时修改其默认行为</value>
   </data>
   <data name="ViewPageLaunchGameAppearanceExclusive.Description" xml:space="preserve">
-    <value>Incompatible with embedded browsers; operations like switching window may cause the game to crash</value>
+    <value>与游戏内浏览器不兼容，切屏等操作可能使游戏闪退</value>
   </data>
   <data name="ViewPageLaunchGameAppearanceFullscreen.Description" xml:space="preserve">
-    <value>Overwrite default fullscreen status</value>
+    <value>覆盖默认的全屏状态</value>
   </data>
   <data name="ViewPageLaunchGameAppearanceBorderless.Description" xml:space="preserve">
-    <value>Create window as popup, without frame</value>
+    <value>将窗口创建为无边框弹出窗口</value>
   </data>
   <data name="ViewPageLaunchGameAppearanceScreenWidth.Description" xml:space="preserve">
-    <value>Overwrite game window width setting</value>
+    <value>覆盖默认窗口宽度</value>
   </data>
   <data name="ViewPageLaunchGameAppearanceScreenHeight.Description" xml:space="preserve">
-    <value>Overwrite game window height setting</value>
+    <value>覆盖默认窗口高度</value>
   </data>
   <data name="ViewPageLaunchGameUseHoyolabAccount.Description" xml:space="preserve">
-    <value>Sign in with the currently selected MiYouShe / HoYoLAB user. Start parameters need to be enabled</value>
+    <value>使用当前选中的 米游社 / HoYoLAB 用户登录。需要启用「 启动参数 」</value>
   </data>
   <data name="ViewPageHomeLaunch.Content" xml:space="preserve">
-    <value>Launch</value>
+    <value>启动游戏</value>
   </data>
   <data name="ViewPageHomeKillProcess.Content" xml:space="preserve">
-    <value>Kill Process</value>
+    <value>结束进程</value>
   </data>
   <data name="ViewPageHomeGamePath.Header" xml:space="preserve">
-    <value>Genshin Impact Game Path:</value>
+    <value>游戏路径：</value>
   </data>
   <data name="ViewPageHomeGamePath.PlaceholderText" xml:space="preserve">
-    <value>eg: C:\\Genshin Impact\\YuanShen.exe</value>
+    <value>例如：C:\\Genshin Impact\\YuanShen.exe</value>
   </data>
   <data name="ViewPageSettingsStealthMode.Description" xml:space="preserve">
-    <value>When enabled, this toolkit launches the game immediately on startup, hiding in the system tray.</value>
+    <value>启用后，Sigewinne Toolkit 会在启动时立即启动游戏，并隐藏在系统托盘中。</value>
   </data>
   <data name="ViewPageSettingsStealthMode.Header" xml:space="preserve">
-    <value>Stealth Mode</value>
+    <value>隐身模式</value>
   </data>
-  <data name="ViewPageSettingsRestrictedTokens.Header" xml:space="preserve">
-    <value>Restricted Tokens</value>
+  <data name="ViewPageSettingsEnableRestrictedTokens.Header" xml:space="preserve">
+    <value>受限令牌</value>
   </data>
-  <data name="ViewPageSettingsRestrictedTokens.Description" xml:space="preserve">
-    <value>Start the Game with Standard User Accesss Token</value>
-  </data>
-  <data name="ViewMainAppEdition.Title" xml:space="preserve">
-    <value>Lite Version</value>
-  </data>
-  <data name="ViewMainHome.Content" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="ViewPageSettingsLanguageOverride.Description" xml:space="preserve">
-    <value>Overrides the application language. A restart is required for changes to take effect.</value>
-  </data>
-  <data name="ViewPageSettingsLanguageOverride.Header" xml:space="preserve">
-    <value>Language Override</value>
-  </data>
-  <data name="NotifyIconName" xml:space="preserve">
-    <value>sigewinne toolkit</value>
+  <data name="ViewPageSettingsEnableRestrictedTokens.Description" xml:space="preserve">
+    <value>使用标准用户访问令牌启动游戏</value>
   </data>
 </root>

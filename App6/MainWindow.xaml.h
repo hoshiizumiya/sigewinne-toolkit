@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <microsoft.ui.xaml.window.h>
 #include <wil/result_macros.h>
@@ -21,17 +21,21 @@ namespace winrt::App6::implementation
 
         MainWindow();
         void initializeEnv();
-
+        void Window_Closed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::WindowEventArgs const& args);
 
     private:
         HWND _hwnd{ nullptr };
+        UINT NotifyIconCallbackMessage;
+        UINT TaskbarCreatedMessage;
+
         HWND GetWindowHandle();
+        void AddNotifyIcon();
 		void Exp1();
         void Exp2();
+        void InitWindow();
 
-    public:
-        void Window_Closed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::WindowEventArgs const& args);
     };
+
 }
 
 namespace winrt::App6::factory_implementation
