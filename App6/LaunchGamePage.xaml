@@ -40,7 +40,7 @@
 
                     <essential:SettingsExpander.Items >
                         <essential:SettingsCard
-                             IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}"
+                        IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}"
                         x:Uid="ViewPageLaunchGameAppearanceExclusive"
                         MinHeight="58"
                         Padding="16,8,16,8"
@@ -55,8 +55,7 @@
                         </essential:SettingsCard>
 
                         <essential:SettingsCard
-                            IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}"
-
+                        IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}"
                         x:Uid="ViewPageLaunchGameAppearanceFullscreen"
                         MinHeight="58"
                         Padding="16,8,16,8"
@@ -71,7 +70,7 @@
                         </essential:SettingsCard>
 
                         <essential:SettingsCard
-                                IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}"
+                        IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}"
                         x:Uid="ViewPageLaunchGameAppearanceBorderless"
                         MinHeight="58"
                         Padding="16,8,16,8"
@@ -86,7 +85,7 @@
                         </essential:SettingsCard>
 
                         <essential:SettingsCard
-                                IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}"
+                        IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}"
                         x:Uid="ViewPageLaunchGameAppearanceScreenWidth"
                         MinHeight="58"
                         Padding="16,8,16,8"
@@ -111,7 +110,7 @@
                         </essential:SettingsCard>
 
                         <essential:SettingsCard
-                                IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}"
+                        IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}"
                         x:Uid="ViewPageLaunchGameAppearanceScreenHeight"
                         MinHeight="58"
                         Padding="16,8,16,8"
