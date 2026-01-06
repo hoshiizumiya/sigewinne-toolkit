@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -227,5 +227,11 @@
   </data>
   <data name="ViewPageSettingsEnableRestrictedTokens.Description" xml:space="preserve">
     <value>使用标准用户访问令牌启动游戏</value>
+  </data>
+  <data name="ViewMainHome.Content" xml:space="preserve">
+    <value>主页</value>
+  </data>
+  <data name="ViewMainAppEdition.Title" xml:space="preserve">
+    <value>Lite 版</value>
   </data>
 </root>
