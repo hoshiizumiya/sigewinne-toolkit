@@ -39,53 +39,39 @@
                     <essential:SettingsExpander.Items>
                         <essential:SettingsCard
                             x:Uid="ViewPageLaunchGameAppearanceExclusive"
-                            MinHeight="58"
-                            Padding="16,8,16,8"
                             Header="-window-mode exclusive"
                             IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}">
                             <ToggleSwitch
                                 MinWidth="10"
                                 IsOn="{x:Bind LaunchGameAppearanceExclusive, Mode=TwoWay}"
                                 Style="{ThemeResource RightAlignedCompactToggleSwitchStyle}" />
-                            <essential:SettingsCard.HeaderIcon>
-                                <FontIcon Glyph="&#xE943;" Opacity="0" />
-                            </essential:SettingsCard.HeaderIcon>
+
                         </essential:SettingsCard>
 
                         <essential:SettingsCard
                             x:Uid="ViewPageLaunchGameAppearanceFullscreen"
-                            MinHeight="58"
-                            Padding="16,8,16,8"
                             Header="-screen-fullscreen"
                             IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}">
                             <ToggleSwitch
                                 MinWidth="10"
                                 IsOn="{x:Bind LaunchGameAppearanceFullscreen, Mode=TwoWay}"
                                 Style="{ThemeResource RightAlignedCompactToggleSwitchStyle}" />
-                            <essential:SettingsCard.HeaderIcon>
-                                <FontIcon Glyph="&#xE943;" Opacity="0" />
-                            </essential:SettingsCard.HeaderIcon>
+
                         </essential:SettingsCard>
 
                         <essential:SettingsCard
                             x:Uid="ViewPageLaunchGameAppearanceBorderless"
-                            MinHeight="58"
-                            Padding="16,8,16,8"
                             Header="-popupwindow"
                             IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}">
                             <ToggleSwitch
                                 MinWidth="10"
                                 IsOn="{x:Bind LaunchGameAppearanceBorderless, Mode=TwoWay}"
                                 Style="{ThemeResource RightAlignedCompactToggleSwitchStyle}" />
-                            <essential:SettingsCard.HeaderIcon>
-                                <FontIcon Glyph="&#xE943;" Opacity="0" />
-                            </essential:SettingsCard.HeaderIcon>
+
                         </essential:SettingsCard>
 
                         <essential:SettingsCard
                             x:Uid="ViewPageLaunchGameAppearanceScreenWidth"
-                            MinHeight="58"
-                            Padding="16,8,16,8"
                             Header="-screen-width"
                             IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}">
                             <StackPanel Orientation="Horizontal" Spacing="160">
@@ -102,15 +88,11 @@
                                     IsOn="{x:Bind LaunchGameAppearanceScreenWidth, Mode=TwoWay}"
                                     Style="{ThemeResource RightAlignedCompactToggleSwitchStyle}" />
                             </StackPanel>
-                            <essential:SettingsCard.HeaderIcon>
-                                <FontIcon Glyph="&#xE943;" Opacity="0" />
-                            </essential:SettingsCard.HeaderIcon>
+
                         </essential:SettingsCard>
 
                         <essential:SettingsCard
                             x:Uid="ViewPageLaunchGameAppearanceScreenHeight"
-                            MinHeight="58"
-                            Padding="16,8,16,8"
                             Header="-screen-height"
                             IsEnabled="{x:Bind LaunchGameArgumentsToggleSwitch.IsOn, Mode=OneWay}">
                             <StackPanel Orientation="Horizontal" Spacing="160">
@@ -127,9 +109,7 @@
                                     IsOn="{x:Bind LaunchGameAppearanceScreenHeight, Mode=TwoWay}"
                                     Style="{ThemeResource RightAlignedCompactToggleSwitchStyle}" />
                             </StackPanel>
-                            <essential:SettingsCard.HeaderIcon>
-                                <FontIcon Glyph="&#xE943;" Opacity="0" />
-                            </essential:SettingsCard.HeaderIcon>
+
                         </essential:SettingsCard>
                     </essential:SettingsExpander.Items>
 
