@@ -23,10 +23,9 @@
       <Filter>View</Filter>
     </Page>
     <Page Include="Themes\Generic.xaml" />
-    <Page Include="SettingsCard_res.xaml">
+    <Page Include="RightAlignedCompactToggleSwitch.xaml">
       <Filter>Controls</Filter>
     </Page>
-    <Page Include="ResourceDictionary.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="MainWindow.idl" />
@@ -45,9 +44,6 @@
     </ClCompile>
     <ClCompile Include="HoYoLogin.cpp">
       <Filter>Service\Account</Filter>
-    </ClCompile>
-    <ClCompile Include="SettingsCard.cpp">
-      <Filter>Controls</Filter>
     </ClCompile>
     <ClCompile Include="Security.cpp">
       <Filter>Service</Filter>
@@ -277,5 +273,9 @@
     <PRIResource Include="Strings\zh-CN\Resources.resw">
       <Filter>Resource</Filter>
     </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natvis" />
+    <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natstepfilter" />
   </ItemGroup>
 </Project>

@@ -168,10 +168,6 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="settings.pb.h" />
-    <ClInclude Include="SettingsCard.h">
-      <DependentUpon>SettingsCard.cpp</DependentUpon>
-      <SubType>Code</SubType>
-    </ClInclude>
     <ClInclude Include="SettingsPage.xaml.h">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -192,10 +188,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml" />
-    <Page Include="ResourceDictionary.xaml" />
-    <Page Include="SettingsCard_res.xaml">
-      <FileType>Document</FileType>
-    </Page>
+    <Page Include="RightAlignedCompactToggleSwitch.xaml" />
     <Page Include="SettingsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -218,9 +211,6 @@
     </ClCompile>
     <ClCompile Include="Security.cpp" />
     <ClCompile Include="settings.cpp" />
-    <ClCompile Include="SettingsCard.cpp">
-      <SubType>Code</SubType>
-    </ClCompile>
     <ClCompile Include="SettingsPage.xaml.cpp">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -265,10 +255,6 @@
     <Midl Include="MainWindow.idl">
       <SubType>Code</SubType>
       <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Midl>
-    <Midl Include="SettingsCard.idl">
-      <DependentUpon>SettingsCard.cpp</DependentUpon>
-      <SubType>Code</SubType>
     </Midl>
     <Midl Include="SettingsPage.idl">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
