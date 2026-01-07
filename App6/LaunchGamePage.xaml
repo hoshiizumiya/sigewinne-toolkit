@@ -79,11 +79,12 @@
                                     MinWidth="160"
                                     Padding="12,6,0,0"
                                     VerticalAlignment="Center"
-                                    IsEnabled="True"
+                                    IsEnabled="{x:Bind LaunchGameAppearanceScreenWidthToggle.IsOn, Mode=OneWay}"
                                     Maximum="10000"
                                     Minimum="0"
                                     Value="{x:Bind LaunchGameAppearanceScreenWidthValue, Mode=TwoWay}" />
                                 <ToggleSwitch
+                                    x:Name="LaunchGameAppearanceScreenWidthToggle"
                                     MinWidth="10"
                                     IsOn="{x:Bind LaunchGameAppearanceScreenWidth, Mode=TwoWay}"
                                     Style="{ThemeResource RightAlignedCompactToggleSwitchStyle}" />
@@ -100,11 +101,12 @@
                                     MinWidth="160"
                                     Padding="12,6,0,0"
                                     VerticalAlignment="Center"
-                                    IsEnabled="True"
+                                    IsEnabled="{x:Bind LaunchGameAppearanceScreenHeightToggle.IsOn, Mode=OneWay}"
                                     Maximum="10000"
                                     Minimum="0"
                                     Value="{x:Bind LaunchGameAppearanceScreenHeightValue, Mode=TwoWay}" />
                                 <ToggleSwitch
+                                    x:Name="LaunchGameAppearanceScreenHeightToggle"
                                     MinWidth="10"
                                     IsOn="{x:Bind LaunchGameAppearanceScreenHeight, Mode=TwoWay}"
                                     Style="{ThemeResource RightAlignedCompactToggleSwitchStyle}" />
