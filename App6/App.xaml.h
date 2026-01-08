@@ -1,7 +1,6 @@
 #pragma once
 
 #include "App.xaml.g.h"
-#include "SettingsCard.h"
 
 namespace winrt::App6::implementation
 {
@@ -13,8 +12,9 @@ namespace winrt::App6::implementation
         static void ToForeground();
 
         ~App();
-    private:
-        winrt::Microsoft::UI::Xaml::Window window{ nullptr };
+
+	private:
+        winrt::Microsoft::UI::Xaml::Window mainWindow{nullptr};
 
     };
 }

@@ -19,10 +19,18 @@
 #include <winrt/Microsoft.UI.Xaml.Interop.h>
 #include <winrt/Microsoft.UI.Xaml.Markup.h>
 #include <winrt/Microsoft.UI.Xaml.Media.h>
+#include <winrt/Microsoft.UI.Xaml.Media.Animation.h>
 #include <winrt/Microsoft.UI.Xaml.Navigation.h>
 #include <winrt/Microsoft.UI.Xaml.Shapes.h>
 #include <winrt/Microsoft.UI.Dispatching.h>
+#include <winrt/Microsoft.UI.Windowing.h>
+#include <winrt/Microsoft.Windows.Globalization.h>
+#include <winrt/Microsoft.Windows.Storage.Pickers.h>
+#include <winrt/Microsoft.Windows.ApplicationModel.Resources.h>
+#include <winrt/Windows.UI.Xaml.Interop.h>
+#include <wil/cppwinrt.h>   
 #include <wil/cppwinrt_helpers.h>
+#include <wil/cppwinrt_authoring.h>
 
 // WinUIEssential.WinUI3
 #include <winrt/Microsoft.UI.Xaml.Controls.AnimatedVisuals.h>

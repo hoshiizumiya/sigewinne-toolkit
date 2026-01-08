@@ -111,7 +111,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
     <ClCompile>
-      <PreprocessorDefinitions>NDEBUG;RESULT_DIAGNOSTICS_LEVEL=0;DISABLE_XAML_GENERATED_MAIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;RESULT_DIAGNOSTICS_LEVEL=0;DISABLE_XAML_GENERATED_MAIN;XXH_INLINE_ALL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp20</LanguageStandard>
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </ForcedIncludeFiles>
@@ -168,14 +168,11 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="settings.pb.h" />
-    <ClInclude Include="SettingsCard.h">
-      <DependentUpon>SettingsCard.cpp</DependentUpon>
-      <SubType>Code</SubType>
-    </ClInclude>
     <ClInclude Include="SettingsPage.xaml.h">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="SettingsViewModel.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -192,10 +189,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml" />
-    <Page Include="ResourceDictionary.xaml" />
-    <Page Include="SettingsCard_res.xaml">
-      <FileType>Document</FileType>
-    </Page>
+    <Page Include="RightAlignedCompactToggleSwitch.xaml" />
     <Page Include="SettingsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -218,13 +212,11 @@
     </ClCompile>
     <ClCompile Include="Security.cpp" />
     <ClCompile Include="settings.cpp" />
-    <ClCompile Include="SettingsCard.cpp">
-      <SubType>Code</SubType>
-    </ClCompile>
     <ClCompile Include="SettingsPage.xaml.cpp">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="SettingsViewModel.cpp" />
     <ClInclude Include="LaunchGame.h" />
     <ClCompile Include="LaunchGamePage.xaml.cpp">
       <DependentUpon>LaunchGamePage.xaml</DependentUpon>
@@ -266,10 +258,7 @@
       <SubType>Code</SubType>
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Midl>
-    <Midl Include="SettingsCard.idl">
-      <DependentUpon>SettingsCard.cpp</DependentUpon>
-      <SubType>Code</SubType>
-    </Midl>
+    <Midl Include="SettingsViewModel.idl" />
     <Midl Include="SettingsPage.idl">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
       <SubType>Code</SubType>

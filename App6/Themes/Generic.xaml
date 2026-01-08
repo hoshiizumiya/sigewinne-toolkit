@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:App6">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="ms-appx:///SettingsCard_res.xaml" />
+        <!--<ResourceDictionary Source="ms-appx:///SettingsCard_res.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
