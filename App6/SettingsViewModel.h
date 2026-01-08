@@ -9,7 +9,7 @@ namespace winrt::App6::implementation
 {
     struct SettingsViewModel : SettingsViewModelT<SettingsViewModel>, wil::notify_property_changed_base<SettingsViewModel>
     {
-		SettingsViewModel();
+		SettingsViewModel() = default;
 
         bool StealthMode();
         void StealthMode(bool value);
@@ -22,7 +22,6 @@ namespace winrt::App6::implementation
 
         void LangCombo_SelectionChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::Controls::SelectionChangedEventArgs const& e);
 
-
         auto GamePath() const noexcept {
             return m_GamePath;
         }
@@ -34,10 +33,9 @@ namespace winrt::App6::implementation
             }
             return *this;
         };
+
+	private:
         hstring m_GamePath{ to_hstring(pappsettings->gamepath()) };
-
-
-
 
     };
 }
